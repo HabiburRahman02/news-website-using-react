@@ -2,7 +2,7 @@
 const CategoryNews = () => {
     return (
         <div>
-            Category news here
+            {/* Category news here */}
         </div>
     );
 };

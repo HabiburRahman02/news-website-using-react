@@ -16,7 +16,7 @@ const LeftSideNav = () => {
                     categories.map(category =>
                         <NavLink
                             to={`/category/${category.category_id}`}
-                            className={({ isActive }) => `w-full mb-2 text-lg font-semibold flex py-4 rounded-lg px-4`}
+                            className={({ isActive }) => `w-full bg-gray-100 hover:bg-gray-200 mb-2 text-lg font-semibold flex py-4 rounded-lg px-4`}
                             key={category.category_id}>
                             <button
                             >{category.category_name}

@@ -42,7 +42,7 @@ const Navbar = () => {
                 <img src={userLogo} alt="" />
                 <div>
                     <Link>
-                        <button className="btn bg-neutral hover:btn-neutral text-white px-6 rounded-none">Latest</button>
+                        <button className="btn bg-neutral hover:btn-neutral text-white px-6 rounded-none">Login</button>
                     </Link>
                 </div>
             </div>

@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 import userLogo from '../../assets/user.png';
 const Navbar = () => {
     const links = <>
-        <li><Link>Home</Link></li>
-        <li><Link>About</Link></li>
+        <li><Link to='/'>Home</Link></li>
+        <li><Link to='/about'>About</Link></li>
         <li><Link>Career</Link></li>
     </>
 
@@ -41,7 +41,7 @@ const Navbar = () => {
             <div className="navbar-end flex gap-2 items-center">
                 <img src={userLogo} alt="" />
                 <div>
-                    <Link>
+                    <Link to='/login'>
                         <button className="btn bg-neutral hover:btn-neutral text-white px-6 rounded-none">Login</button>
                     </Link>
                 </div>

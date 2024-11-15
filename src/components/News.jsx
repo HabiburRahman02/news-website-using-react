@@ -53,7 +53,7 @@ const News = ({ news }) => {
                 </p>
                 <button
                     onClick={() => setShowFullDes(!showFullDes)}
-                    className="text-primary font-medium underline">
+                    className="text-pink-500 font-medium underline">
                     {showFullDes ? 'Show Less' : 'Read More'}
                 </button>
             </div>
@@ -64,9 +64,9 @@ const News = ({ news }) => {
                     <AiFillStar size={18} />
                     <span className="ml-1 font-bold text-gray-800">{rating.number}</span>
                 </div>
-                <div className="flex items-center text-gray-500">
+                <div className="flex items-center text-gray-500 text-lg">
                     <FaEye className="mr-1" />
-                    <span className="text-sm">{total_view}</span>
+                    <span className="text-md">{total_view}</span>
                 </div>
             </div>
         </div>

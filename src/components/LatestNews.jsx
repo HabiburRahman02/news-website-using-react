@@ -1,11 +1,16 @@
+import Marquee from "react-fast-marquee";
 
 const LatestNews = () => {
     return (
         <div>
-            <div>
-                <button className="btn bg-red-500 border-none text-white">Latest</button>
-                <div>
-                    sd
+            <div className="flex items-center gap-6">
+                <button className="btn bg-red-500 text-white px-6 rounded-none">Latest</button>
+                <div className="flex">
+                    <Marquee className="font-semibold">
+                        <p>   I can be a React component, multiple React components, or just some text.</p>
+                        <p>   I can be a React component, multiple React components, or just some text.</p>
+                        <p>   I can be a React component, multiple React components, or just some text.</p>
+                    </Marquee>
                 </div>
             </div>
         </div>

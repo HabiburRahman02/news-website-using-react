@@ -3,6 +3,7 @@ import { FaShareAlt, FaEye } from 'react-icons/fa';
 import { AiFillStar } from 'react-icons/ai';
 import { FaRegBookmark } from "react-icons/fa";
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const News = ({ news }) => {
     const [showFullDes, setShowFullDes] = useState(false);
@@ -13,6 +14,7 @@ const News = ({ news }) => {
         rating,
         title,
         total_view,
+        _id
     } = news;
 
 
@@ -56,6 +58,7 @@ const News = ({ news }) => {
                     className="text-pink-500 font-medium underline">
                     {showFullDes ? 'Show Less' : 'Read More'}
                 </button>
+                <Link to={`/newsDetails/${_id}`}>  <button className='ml-4 text-green-500 mb-5'>News Details</button></Link>
             </div>
 
             {/* Footer with Rating and Views */}

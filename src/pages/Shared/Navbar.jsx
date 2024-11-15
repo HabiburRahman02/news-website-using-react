@@ -1,11 +1,19 @@
 import { Link } from "react-router-dom";
 import userLogo from '../../assets/user.png';
+import { useContext } from "react";
+import { AuthContext } from "../../Provider/AuthProvider";
 const Navbar = () => {
+    const { user, logOutUser } = useContext(AuthContext);
+    console.log(user);
     const links = <>
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/about'>About</Link></li>
         <li><Link>Career</Link></li>
     </>
+
+    const handleLogout = () => {
+        logOutUser();
+    }
 
     return (
         <div className="navbar bg-base-100 my-8">
@@ -31,7 +39,7 @@ const Navbar = () => {
                         {links}
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-xl"></a>
+                <a className="btn btn-ghost text-xl">{user ? user.email : ''}</a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
@@ -41,9 +49,15 @@ const Navbar = () => {
             <div className="navbar-end flex gap-2 items-center">
                 <img src={userLogo} alt="" />
                 <div>
-                    <Link to='/login'>
-                        <button className="btn bg-neutral hover:btn-neutral text-white px-6 rounded-none">Login</button>
-                    </Link>
+                    {
+                        user ? <button
+                            onClick={handleLogout}
+                            className="btn bg-neutral hover:btn-neutral text-white px-6 rounded-none">Log Out</button>
+                            : <Link to='/login'>
+                                <button className="btn bg-neutral hover:btn-neutral text-white px-6 rounded-none">Login</button>
+                            </Link>
+                    }
+
                 </div>
             </div>
         </div>

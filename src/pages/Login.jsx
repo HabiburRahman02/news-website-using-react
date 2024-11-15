@@ -3,14 +3,14 @@ import { AuthContext } from "../Provider/AuthProvider";
 import { Link } from "react-router-dom";
 
 const Login = () => {
-    const { createUser } = useContext(AuthContext);
+    const { signInUser } = useContext(AuthContext);
     const handleLogin = e => {
         e.preventDefault();
         const form = e.target;
         const email = form.email.value;
         const password = form.password.value;
         console.log(email, password);
-        createUser(email, password)
+        signInUser(email, password)
             .then((userCredential) => {
                 const user = userCredential.user;
                 console.log(user);

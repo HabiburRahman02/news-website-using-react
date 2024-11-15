@@ -3,7 +3,7 @@ import News from "../../components/News";
 
 const MainContent = () => {
     const { data } = useLoaderData();
-    console.log(data);
+
     return (
         <div>
             <h6 className="font-semibold text-lg mb-4">All Content Here{data?.length}</h6>

@@ -1,9 +1,9 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom'
 import Main from './layout/Main'
-import Home from './pages/Home/Home'
+import CategoryNews from './pages/Home/CategoryNews'
 
 const router = createBrowserRouter([
   {
@@ -12,8 +12,13 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <Home></Home>
-      }
+        element: <Navigate to={'/category/01'}></Navigate>,
+      },
+      {
+        path: '/category/:id',
+        element: <CategoryNews></CategoryNews>,
+        loader: ({ params }) => fetch(`https://openapi.programming-hero.com/api/news/category/${params.id}`)
+      },
     ]
   },
 

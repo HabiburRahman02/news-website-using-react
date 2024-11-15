@@ -1,6 +1,7 @@
 import LatestNews from "../../components/LatestNews";
 import Header from "../Shared/Header";
 import Navbar from "../Shared/Navbar";
+import MainContainer from "./MainContainer";
 
 const Home = () => {
     return (
@@ -8,6 +9,7 @@ const Home = () => {
             <Header></Header>
             <LatestNews></LatestNews>
             <Navbar></Navbar>
+            <MainContainer></MainContainer>
         </div>
     );
 };

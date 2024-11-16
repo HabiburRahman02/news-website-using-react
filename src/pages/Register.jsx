@@ -3,17 +3,25 @@ import { AuthContext } from "../Provider/AuthProvider";
 import { Link } from "react-router-dom";
 
 const Register = () => {
-    const { createUser } = useContext(AuthContext);
+    const { createUser, updateUserProfile } = useContext(AuthContext);
     const handleSignUp = e => {
         e.preventDefault();
         const form = e.target;
+        const name = form.name.value;
+        const photo = form.photo.value;
         const email = form.email.value;
         const password = form.password.value;
+
         console.log(email, password);
         createUser(email, password)
             .then((userCredential) => {
                 const user = userCredential.user;
                 console.log(user);
+                // profile update
+                updateUserProfile(name, photo)
+                    .then(result => {
+                        console.log(result);
+                    })
             })
             .catch((error) => {
                 const errorMessage = error.message;
@@ -26,6 +34,18 @@ const Register = () => {
             <div className="card bg-base-100 w-full max-w-lg  mx-auto shrink-0 shadow-2xl rounded-none">
                 <form onSubmit={handleSignUp} className="card-body">
                     <h2 className="text-xl font-semibold text-center my-4">Register User</h2>
+                    <div className="form-control">
+                        <label className="label">
+                            <span className="label-text font-semibold">Name</span>
+                        </label>
+                        <input type="text" name="name" placeholder="name" className="input input-bordered" required />
+                    </div>
+                    <div className="form-control">
+                        <label className="label">
+                            <span className="label-text font-semibold">Photo Url</span>
+                        </label>
+                        <input type="text" name="photo" placeholder="photo" className="input input-bordered" required />
+                    </div>
                     <div className="form-control">
                         <label className="label">
                             <span className="label-text font-semibold">Email</span>

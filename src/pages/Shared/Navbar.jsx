@@ -47,7 +47,16 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end flex gap-2 items-center">
-                <img src={userLogo} alt="" />
+                <div className="avatar">
+                    <div className="mask mask-hexagon w-14">
+                        {
+                            user?.photoURL ?
+                                <img src={user.photoURL} alt="" />
+                                :
+                                <img src={userLogo} alt="" />
+                        }
+                    </div>
+                </div>
                 <div>
                     {
                         user ? <button
